@@ -1,7 +1,7 @@
 +++
 date = '2025-02-26T00:59:41+08:00'
 draft = false
-title = 'Golang开发跨平台lib'
+title = 'Wasm技术-Golang开发跨平台lib'
 +++
 
 # for why?
