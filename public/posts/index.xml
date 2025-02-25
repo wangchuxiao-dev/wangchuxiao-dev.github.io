@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on 王楚骁的site</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on 王楚骁的site</description>
+    <generator>Hugo -- 0.144.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Feb 2025 00:59:41 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>王楚骁</title>
+      <link>http://localhost:1313/posts/wasm/</link>
+      <pubDate>Wed, 26 Feb 2025 00:59:41 +0800</pubDate>
+      <guid>http://localhost:1313/posts/wasm/</guid>
+      <description>&lt;h1 id=&#34;for-why&#34;&gt;for why?&lt;/h1&gt;
+&lt;p&gt;以Golang为例子，使用Golang开发移动端应用在处理复杂业务逻辑和多端需求时，展现出了显著的优势。相比于Kotlin、Java、Flutter和JavaScript等其他技术栈，Go语言在生态支持、二进制体积和性能优化方面都表现出色。其轻量级的二进制文件和出色的性能使得在复杂业务逻辑和特定场景下的应用开发中，能够显著节省开发成本。
+通过利用Go语言的跨平台编译能力，开发者能够将复杂的核心功能代码一次性编写，然后编译到各个目标平台上。这种统一的底层架构不仅降低了开发难度，还大大减少了问题排查的复杂度。在移动端或者Web前端开发中，开发人员只需通过调用Go编译生成的库文件（如.so或.wasm格式），并通过传入回调函数接受回调来实现UI的更新，从而进一步降低了开发成本和维护成本。
+采用Go语言作为移动端复杂业务逻辑的核心开发语言，不仅能够提升开发效率和性能表现，还能在多端需求下实现代码的重用和统一管理，为开发团队带来显著的经济效益和技术优势。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
