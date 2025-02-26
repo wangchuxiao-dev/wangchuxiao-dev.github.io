@@ -12,7 +12,7 @@ menu:
     - identifier: aboutMe
       name: 关于我
       url: /about/
-      weight: 100
+      weight: 1
 params:
   assets:
     enableFontAwesome: true
