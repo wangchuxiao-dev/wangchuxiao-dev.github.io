@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>404 Page not found | 王楚骁的site</title>
+<title>Shares | 王楚骁的site</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="Shares - 王楚骁的site">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/404.html">
+<link rel="canonical" href="http://localhost:1313/share/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,7 +18,8 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/404.html">
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/share/index.xml">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/share/">
 <noscript>
     <style>
         #theme-toggle,
@@ -117,8 +118,52 @@
         </ul>
     </nav>
 </header>
-<main class="main">
-<div class="not-found">404</div>
+<main class="main"> 
+<header class="page-header">
+  <h1>
+    Shares
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">时隔十年，AI时代重新学习线性代数
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>为什么重新开始学习线性代数? 从小数学就比较一般，一直不太喜欢数学，2015年，我大学一年级，线性代数成了我数学课的“开门红”。说实话，那会儿我完全懵了，满脑子都是问号：这矩阵算来算去到底有啥用？为啥非得折腾这些数字方块？考试前拼命刷题，考完试立马把书扔一边，心里还嘀咕着“这辈子估计用不上了”。可谁能想到，十年后的今天，我居然又翻开了线性代数的课本，而且这次是心甘情愿的！为啥？因为AI火了，而我发现，当年那些让我头大的矩阵运算，现在居然成了理解人工智能的“基本功”。从机器学习到图像识别，线性代数无处不在。
+矩阵运算 你可以把矩阵想象成一个数据表格，每一行代表一个样本，每一列代表一个特征。比如，你想训练一个AI识别猫和狗，矩阵里的数据可能就是一堆猫狗图片的像素值。深度学习的过程，本质上就是对这些矩阵进行各种加减乘除、变形和组合，最终让AI学会从数据中提取规律。比如，神经网络里的每一层都在做矩阵乘法，通过调整矩阵里的参数（也就是权重），AI就能慢慢学会区分猫和狗。
+使用Python的Numpy对矩阵进行运算 当然，我们使用Numpy这个强大的库就能实现矩阵的运算，不需要再手动进行计算。
+安装numpy
+pip3 install numpy 导入模块
+import numpy as np 创建两个矩阵
+A = np.array([[1, 2], [3, 4]]) B = np.array([[5, 6], [7, 8]]) 矩阵相加
+C = A&#43;B print(C) 矩阵相减
+C = A-B print(C) 转置矩阵
+A = np.array([[1, 2, 3], [4, 5, 6]]) B = A.T 矩阵相乘
+A = np.array([[1, 2], [3, 4], [3, 4]]) B = np.array([[5, 6], [5, 6]]) print(np.shape(A), np.shape(B)) print(np.dot(A, B)) </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-26 20:48:12 +0800 CST'>February 26, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to 时隔十年，AI时代重新学习线性代数" href="http://localhost:1313/share/linear_algebra/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Wasm技术-Golang开发Web端Library
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>为什么使用Golang开发Web端应用？ 以Golang为例子，使用Golang开发移动端应用在处理复杂业务逻辑和多端需求时，展现出了显著的优势。相比于Kotlin、Java、Flutter和JavaScript等其他技术栈，Go语言在生态支持、二进制体积和性能优化方面都表现出色。其轻量级的二进制文件和出色的性能使得在复杂业务逻辑和特定场景下的应用开发中，能够显著节省开发成本。 通过利用Go语言的跨平台编译能力，开发者能够将复杂的核心功能代码一次性编写，然后编译到各个目标平台上。这种统一的底层架构不仅降低了开发难度，还大大减少了问题排查的复杂度。在移动端或者Web前端开发中，开发人员只需通过调用Go编译生成的库文件（如.so或.wasm格式），并通过传入回调函数接受回调来实现UI的更新，从而进一步降低了开发成本和维护成本。 采用Go语言作为移动端复杂业务逻辑的核心开发语言，不仅能够提升开发效率和性能表现，还能在多端需求下实现代码的重用和统一管理，为开发团队带来显著的经济效益和技术优势。
+什么是wasm WebAssembly 是基于栈式虚拟机的虚拟二进制指令集（V-ISA）。它是一种给高级编程语言设计的编译目标。Wasm 的出现更能够让我们直接在 Web 平台上，使用 C/C&#43;&#43; 或者其他语言的代码库，同时 Wasm 还能让 Web 应用具有更高的性能。 Wasm 的设计目标是为了能够在JavaScript之外，提供一种高效的实现可能，为构建更高性能的Web应用提供支持。 我们可以简单把他理解为更低级的Java字节码，Python字节码，由wasm虚拟机/运行时来运行。 在 Web 应用程序中，你可以使用 JavaScript 提供的 WebAssembly API 来加载和实例化 WebAssembly 模块。你可以使用 WebAssembly.instantiate() 方法加载模块，并得到一个表示模块实例的对象。你还可以向模块传递导入值，以供模块内部使用。目前在主流浏览器中都已经支持Wasm。JS层就可以对其进行调用。WebAssembly文件中存储着字节码，位于JavaScript引擎中的WebAssembly虚拟机将会执行字节码。
+Wasm的编译 Golang编译到wasm GOOS=js GOARCH=wasm go build -o main.wasm apiwasm/main.go
+Wasm在浏览器运行 主流浏览器JS引擎一般自带了Wasm运行时 Wasm在嵌入式设备，服务器运行
+一些Wasm在服务器上跑的运行时
+https://github.com/wasm3/wasm3 DEMO：以Go语言为例子开发跨平台SDK Wasm技术补充：Wasm的真实应用场景 Wasm在以下场景可以被使用：
+Serverless云函数：将云函数编译成Wasm指令集，高性能，可移植性。 云原生，容器技术，甚至未来可能替代现有容器技术。 区块链，运行在以太坊上执行智能合约 浏览器平台游戏开发 浏览器运行的虚拟机和解释器 浏览器上图像处理、音视频处理、数据压缩、密码学等应用的执行速度 移动设备、物联网 机器学习, 如TensorFlow，已经支持WebAssembly作为编译目标这使得开发人员可以在Web平台上运行高性能的机器学习应用程序。 使用Wasm技术的知名Web应用：爱奇艺直播，Google地球，AutoCAD等。 Wasm在浏览器上已经大获成功。 Wasm在Serverless云函数上小有成就。 但是在嵌入式开发，单片机领域依然属于画大饼的阶段，因为Wasm轻量化的运行时可以运行在大多数嵌入式设备，或许未来它在工业领域能有巨大机遇。 </p>
+  </div>
+  <footer class="entry-footer"><span title='2024-07-26 00:59:41 +0800 CST'>July 26, 2024</span></footer>
+  <a class="entry-link" aria-label="post link to Wasm技术-Golang开发Web端Library" href="http://localhost:1313/share/wasm/"></a>
+</article>
     </main>
     
 <footer class="footer">

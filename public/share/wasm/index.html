@@ -5,34 +5,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Wasm技术-Golang开发跨平台lib | 王楚骁的site</title>
+<title>Wasm技术-Golang开发Web端Library | 王楚骁的site</title>
 <meta name="keywords" content="">
-<meta name="description" content="for why?
+<meta name="description" content="为什么使用Golang开发Web端应用？
 以Golang为例子，使用Golang开发移动端应用在处理复杂业务逻辑和多端需求时，展现出了显著的优势。相比于Kotlin、Java、Flutter和JavaScript等其他技术栈，Go语言在生态支持、二进制体积和性能优化方面都表现出色。其轻量级的二进制文件和出色的性能使得在复杂业务逻辑和特定场景下的应用开发中，能够显著节省开发成本。
 通过利用Go语言的跨平台编译能力，开发者能够将复杂的核心功能代码一次性编写，然后编译到各个目标平台上。这种统一的底层架构不仅降低了开发难度，还大大减少了问题排查的复杂度。在移动端或者Web前端开发中，开发人员只需通过调用Go编译生成的库文件（如.so或.wasm格式），并通过传入回调函数接受回调来实现UI的更新，从而进一步降低了开发成本和维护成本。
 采用Go语言作为移动端复杂业务逻辑的核心开发语言，不仅能够提升开发效率和性能表现，还能在多端需求下实现代码的重用和统一管理，为开发团队带来显著的经济效益和技术优势。
-Go/Python的移动端开发
-以安卓开发举例子：
-对于Go的安卓开发而言，gomobile可以直接将已有GO代码编译成安装安装aar文件(.so动态链接库集合)的形式，然后通过Java/Kotlin层代码去调用它，就可以让原本是Go编译的二进制的程序，变成了一个apk形式去运行。对于IOS开发而言，gomobile可以直接将已有GO代码编译成ios需要动态库文件。
-对于Python的安卓开发而言，也可以将Python编译成so给Java，Kotlin调用。
-so和AAR包
-什么是so(SHARED OBJECT)？
-SO库是一种Linux使用的动态链接库，它允许开发者将代码编译成共享对象文件，并在运行时动态加载和链接。这使得代码更加模块化、可重用，并有助于提高应用程序的性能和可维护性。
-静态库是指在我们的应用中，有一些公共代码是需要反复使用的库，静态库于编译的时候链接或者导入。
-什么是安卓AAR包？
-安卓aar包是Java .class文件，so文件和安卓的布局文件，APP的图片的集合。
-移动端安卓，IOS开发
-gomobile是一个可以把Go编译成android和ios平台使用的工具。
-go mobile编译安卓aar文件
-gomobile bind -target android ./apimobile
-gomobile bind -target ios ./apimobile
-Go/Python开发web浏览器和嵌入式应用: Wasm
-同上，在一些需要web前端有复杂业务逻辑和特殊场景的时候，也可以引入Golang或者其他语言来解决问题，我们可以用把Golang代码编译成.wasm文件的方式实现Go语言在web浏览器和单片机的运行。
 什么是wasm
-WebAssembly是基于栈式虚拟机的虚拟二进制指令集（V-ISA）。它被设计为高级编程语言的可移植编译目标。Wasm 的出现更能够让我们直接在 Web平台上，使用那些业界已存在许久的众多优秀的 C/C&#43;&#43; 代码库
-Wasm 还能让 Web 应用具有更高的性能，甚至让 Web 应用能够与原生应用展开竞争。它在特殊场景能超越原生应用的性能，大多数情况下和原生不相上下。
-wasm是一种编译目标，一种字节码。
-Wasm的设计目标是为了能够在JavaScript之外，提供一种高效的实现可能，为构建更高性能的Web应用提供支持。
+WebAssembly 是基于栈式虚拟机的虚拟二进制指令集（V-ISA）。它是一种给高级编程语言设计的编译目标。Wasm 的出现更能够让我们直接在 Web 平台上，使用 C/C&#43;&#43; 或者其他语言的代码库，同时 Wasm 还能让 Web 应用具有更高的性能。
+Wasm 的设计目标是为了能够在JavaScript之外，提供一种高效的实现可能，为构建更高性能的Web应用提供支持。
 我们可以简单把他理解为更低级的Java字节码，Python字节码，由wasm虚拟机/运行时来运行。
 在 Web 应用程序中，你可以使用 JavaScript 提供的 WebAssembly API 来加载和实例化 WebAssembly 模块。你可以使用 WebAssembly.instantiate() 方法加载模块，并得到一个表示模块实例的对象。你还可以向模块传递导入值，以供模块内部使用。目前在主流浏览器中都已经支持Wasm。JS层就可以对其进行调用。WebAssembly文件中存储着字节码，位于JavaScript引擎中的WebAssembly虚拟机将会执行字节码。
 Wasm的编译
@@ -40,9 +21,30 @@ Golang编译到wasm
 GOOS=js GOARCH=wasm go build -o main.wasm apiwasm/main.go
 Wasm在浏览器运行
 主流浏览器JS引擎一般自带了Wasm运行时
-Wasm在嵌入式设备，服务器运行">
+Wasm在嵌入式设备，服务器运行
+一些Wasm在服务器上跑的运行时
+
+https://github.com/wasm3/wasm3
+
+DEMO：以Go语言为例子开发跨平台SDK
+Wasm技术补充：Wasm的真实应用场景
+Wasm在以下场景可以被使用：
+
+Serverless云函数：将云函数编译成Wasm指令集，高性能，可移植性。
+云原生，容器技术，甚至未来可能替代现有容器技术。
+区块链，运行在以太坊上执行智能合约
+浏览器平台游戏开发
+浏览器运行的虚拟机和解释器
+浏览器上图像处理、音视频处理、数据压缩、密码学等应用的执行速度
+移动设备、物联网
+机器学习, 如TensorFlow，已经支持WebAssembly作为编译目标这使得开发人员可以在Web平台上运行高性能的机器学习应用程序。
+使用Wasm技术的知名Web应用：爱奇艺直播，Google地球，AutoCAD等。
+Wasm在浏览器上已经大获成功。
+Wasm在Serverless云函数上小有成就。
+但是在嵌入式开发，单片机领域依然属于画大饼的阶段，因为Wasm轻量化的运行时可以运行在大多数嵌入式设备，或许未来它在工业领域能有巨大机遇。
+">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/wasm/">
+<link rel="canonical" href="http://localhost:1313/share/wasm/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -51,7 +53,7 @@ Wasm在嵌入式设备，服务器运行">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/wasm/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/share/wasm/">
 <noscript>
     <style>
         #theme-toggle,
@@ -132,23 +134,19 @@ Wasm在嵌入式设备，服务器运行">
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/tech/" title="技术分享">
-                    <span>技术分享</span>
+                <a href="https://github.com/wangchuxiao-dev" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="目录">
-                    <span>目录</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/talk/" title="生活杂谈">
-                    <span>生活杂谈</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/aboutme/" title="关于我">
-                    <span>关于我</span>
+                <a href="http://localhost:1313/about/" title="about me">
+                    <span>about me</span>
                 </a>
             </li>
         </ul>
@@ -160,50 +158,33 @@ Wasm在嵌入式设备，服务器运行">
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Wasm技术-Golang开发跨平台lib
+      Wasm技术-Golang开发Web端Library
     </h1>
-    <div class="post-meta"><span title='2025-02-26 00:59:41 +0800 CST'>February 26, 2025</span>
+    <div class="post-meta"><span title='2024-07-26 00:59:41 +0800 CST'>July 26, 2024</span>
 
 </div>
   </header> 
-  <div class="post-content"><h1 id="for-why">for why?<a hidden class="anchor" aria-hidden="true" href="#for-why">#</a></h1>
+  <div class="post-content"><h2 id="为什么使用golang开发web端应用">为什么使用Golang开发Web端应用？<a hidden class="anchor" aria-hidden="true" href="#为什么使用golang开发web端应用">#</a></h2>
 <p>以Golang为例子，使用Golang开发移动端应用在处理复杂业务逻辑和多端需求时，展现出了显著的优势。相比于Kotlin、Java、Flutter和JavaScript等其他技术栈，Go语言在生态支持、二进制体积和性能优化方面都表现出色。其轻量级的二进制文件和出色的性能使得在复杂业务逻辑和特定场景下的应用开发中，能够显著节省开发成本。
 通过利用Go语言的跨平台编译能力，开发者能够将复杂的核心功能代码一次性编写，然后编译到各个目标平台上。这种统一的底层架构不仅降低了开发难度，还大大减少了问题排查的复杂度。在移动端或者Web前端开发中，开发人员只需通过调用Go编译生成的库文件（如.so或.wasm格式），并通过传入回调函数接受回调来实现UI的更新，从而进一步降低了开发成本和维护成本。
 采用Go语言作为移动端复杂业务逻辑的核心开发语言，不仅能够提升开发效率和性能表现，还能在多端需求下实现代码的重用和统一管理，为开发团队带来显著的经济效益和技术优势。</p>
-<h1 id="gopython的移动端开发">Go/Python的移动端开发<a hidden class="anchor" aria-hidden="true" href="#gopython的移动端开发">#</a></h1>
-<p>以安卓开发举例子：
-对于Go的安卓开发而言，gomobile可以直接将已有GO代码编译成安装安装aar文件(.so动态链接库集合)的形式，然后通过Java/Kotlin层代码去调用它，就可以让原本是Go编译的二进制的程序，变成了一个apk形式去运行。对于IOS开发而言，gomobile可以直接将已有GO代码编译成ios需要动态库文件。
-对于Python的安卓开发而言，也可以将Python编译成so给Java，Kotlin调用。</p>
-<h1 id="so和aar包">so和AAR包<a hidden class="anchor" aria-hidden="true" href="#so和aar包">#</a></h1>
-<p>什么是so(SHARED OBJECT)？
-SO库是一种Linux使用的动态链接库，它允许开发者将代码编译成共享对象文件，并在运行时动态加载和链接。这使得代码更加模块化、可重用，并有助于提高应用程序的性能和可维护性。
-静态库是指在我们的应用中，有一些公共代码是需要反复使用的库，静态库于编译的时候链接或者导入。</p>
-<h1 id="什么是安卓aar包">什么是安卓AAR包？<a hidden class="anchor" aria-hidden="true" href="#什么是安卓aar包">#</a></h1>
-<p>安卓aar包是Java .class文件，so文件和安卓的布局文件，APP的图片的集合。</p>
-<p>移动端安卓，IOS开发
-gomobile是一个可以把Go编译成android和ios平台使用的工具。
-go mobile编译安卓aar文件
-gomobile bind -target android ./apimobile
-gomobile bind -target ios ./apimobile
-Go/Python开发web浏览器和嵌入式应用: Wasm
-同上，在一些需要web前端有复杂业务逻辑和特殊场景的时候，也可以引入Golang或者其他语言来解决问题，我们可以用把Golang代码编译成.wasm文件的方式实现Go语言在web浏览器和单片机的运行。
-什么是wasm</p>
-<p>WebAssembly是基于栈式虚拟机的虚拟二进制指令集（V-ISA）。它被设计为高级编程语言的可移植编译目标。Wasm 的出现更能够让我们直接在 Web平台上，使用那些业界已存在许久的众多优秀的 C/C++ 代码库
-Wasm 还能让 Web 应用具有更高的性能，甚至让 Web 应用能够与原生应用展开竞争。它在特殊场景能超越原生应用的性能，大多数情况下和原生不相上下。
-wasm是一种编译目标，一种字节码。
-Wasm的设计目标是为了能够在JavaScript之外，提供一种高效的实现可能，为构建更高性能的Web应用提供支持。
+<h2 id="什么是wasm">什么是wasm<a hidden class="anchor" aria-hidden="true" href="#什么是wasm">#</a></h2>
+<p>WebAssembly 是基于栈式虚拟机的虚拟二进制指令集（V-ISA）。它是一种给高级编程语言设计的编译目标。Wasm 的出现更能够让我们直接在 Web 平台上，使用 C/C++ 或者其他语言的代码库，同时 Wasm 还能让 Web 应用具有更高的性能。
+Wasm 的设计目标是为了能够在JavaScript之外，提供一种高效的实现可能，为构建更高性能的Web应用提供支持。
 我们可以简单把他理解为更低级的Java字节码，Python字节码，由wasm虚拟机/运行时来运行。
 在 Web 应用程序中，你可以使用 JavaScript 提供的 WebAssembly API 来加载和实例化 WebAssembly 模块。你可以使用 WebAssembly.instantiate() 方法加载模块，并得到一个表示模块实例的对象。你还可以向模块传递导入值，以供模块内部使用。目前在主流浏览器中都已经支持Wasm。JS层就可以对其进行调用。WebAssembly文件中存储着字节码，位于JavaScript引擎中的WebAssembly虚拟机将会执行字节码。</p>
-<p>Wasm的编译
-Golang编译到wasm
-GOOS=js GOARCH=wasm go build -o main.wasm apiwasm/main.go
-Wasm在浏览器运行
-主流浏览器JS引擎一般自带了Wasm运行时
+<h2 id="wasm的编译">Wasm的编译<a hidden class="anchor" aria-hidden="true" href="#wasm的编译">#</a></h2>
+<h3 id="golang编译到wasm">Golang编译到wasm<a hidden class="anchor" aria-hidden="true" href="#golang编译到wasm">#</a></h3>
+<p>GOOS=js GOARCH=wasm go build -o main.wasm apiwasm/main.go</p>
+<h3 id="wasm在浏览器运行">Wasm在浏览器运行<a hidden class="anchor" aria-hidden="true" href="#wasm在浏览器运行">#</a></h3>
+<p>主流浏览器JS引擎一般自带了Wasm运行时
 Wasm在嵌入式设备，服务器运行</p>
-<p>Wasm3是一款用C编写能够在嵌入式设备和服务器上运行的WebAssembly轻量级运行时
-<a href="https://github.com/wasm3/wasm3">https://github.com/wasm3/wasm3</a>
-DEMO：以Go语言为例子开发跨平台SDK</p>
-<h1 id="wasm技术补充wasm的真实应用场景">Wasm技术补充：Wasm的真实应用场景<a hidden class="anchor" aria-hidden="true" href="#wasm技术补充wasm的真实应用场景">#</a></h1>
+<p>一些Wasm在服务器上跑的运行时</p>
+<ul>
+<li><a href="https://github.com/wasm3/wasm3">https://github.com/wasm3/wasm3</a></li>
+</ul>
+<h2 id="demo以go语言为例子开发跨平台sdk">DEMO：以Go语言为例子开发跨平台SDK<a hidden class="anchor" aria-hidden="true" href="#demo以go语言为例子开发跨平台sdk">#</a></h2>
+<h2 id="wasm技术补充wasm的真实应用场景">Wasm技术补充：Wasm的真实应用场景<a hidden class="anchor" aria-hidden="true" href="#wasm技术补充wasm的真实应用场景">#</a></h2>
 <p>Wasm在以下场景可以被使用：</p>
 <ul>
 <li>Serverless云函数：将云函数编译成Wasm指令集，高性能，可移植性。</li>
@@ -217,8 +198,7 @@ DEMO：以Go语言为例子开发跨平台SDK</p>
 使用Wasm技术的知名Web应用：爱奇艺直播，Google地球，AutoCAD等。
 Wasm在浏览器上已经大获成功。
 Wasm在Serverless云函数上小有成就。
-但是在嵌入式开发，单片机领域依然属于画大饼的阶段，因为Wasm轻量化的运行时可以运行在大多数嵌入式设备，或许未来它在工业领域能有巨大机遇。
-目前 WASM 指令集本身还在快速发展阶段，仍然存在一些需要解决的问题和增添更多的特性，例如：异常处理、并发、垃圾收集等。</li>
+但是在嵌入式开发，单片机领域依然属于画大饼的阶段，因为Wasm轻量化的运行时可以运行在大多数嵌入式设备，或许未来它在工业领域能有巨大机遇。</li>
 </ul>
 
 

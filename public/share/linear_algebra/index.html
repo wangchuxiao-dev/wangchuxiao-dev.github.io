@@ -5,11 +5,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>404 Page not found | 王楚骁的site</title>
+<title>时隔十年，AI时代重新学习线性代数 | 王楚骁的site</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="为什么重新开始学习线性代数?
+从小数学就比较一般，一直不太喜欢数学，2015年，我大学一年级，线性代数成了我数学课的“开门红”。说实话，那会儿我完全懵了，满脑子都是问号：这矩阵算来算去到底有啥用？为啥非得折腾这些数字方块？考试前拼命刷题，考完试立马把书扔一边，心里还嘀咕着“这辈子估计用不上了”。可谁能想到，十年后的今天，我居然又翻开了线性代数的课本，而且这次是心甘情愿的！为啥？因为AI火了，而我发现，当年那些让我头大的矩阵运算，现在居然成了理解人工智能的“基本功”。从机器学习到图像识别，线性代数无处不在。
+矩阵运算
+你可以把矩阵想象成一个数据表格，每一行代表一个样本，每一列代表一个特征。比如，你想训练一个AI识别猫和狗，矩阵里的数据可能就是一堆猫狗图片的像素值。深度学习的过程，本质上就是对这些矩阵进行各种加减乘除、变形和组合，最终让AI学会从数据中提取规律。比如，神经网络里的每一层都在做矩阵乘法，通过调整矩阵里的参数（也就是权重），AI就能慢慢学会区分猫和狗。
+使用Python的Numpy对矩阵进行运算
+当然，我们使用Numpy这个强大的库就能实现矩阵的运算，不需要再手动进行计算。
+安装numpy
+pip3 install numpy
+导入模块
+import numpy as np
+创建两个矩阵
+A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+矩阵相加
+C = A&#43;B
+print(C)
+矩阵相减
+C = A-B
+print(C)
+转置矩阵
+A = np.array([[1, 2, 3], [4, 5, 6]])
+B = A.T
+矩阵相乘
+A = np.array([[1, 2], [3, 4], [3, 4]])
+B = np.array([[5, 6], [5, 6]])
+print(np.shape(A), np.shape(B))
+print(np.dot(A, B))
+">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/404.html">
+<link rel="canonical" href="http://localhost:1313/share/linear_algebra/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,7 +45,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/404.html">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/share/linear_algebra/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,7 +85,7 @@
 </noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -118,7 +145,53 @@
     </nav>
 </header>
 <main class="main">
-<div class="not-found">404</div>
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      时隔十年，AI时代重新学习线性代数
+    </h1>
+    <div class="post-meta"><span title='2025-02-26 20:48:12 +0800 CST'>February 26, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="为什么重新开始学习线性代数">为什么重新开始学习线性代数?<a hidden class="anchor" aria-hidden="true" href="#为什么重新开始学习线性代数">#</a></h2>
+<p>从小数学就比较一般，一直不太喜欢数学，2015年，我大学一年级，线性代数成了我数学课的“开门红”。说实话，那会儿我完全懵了，满脑子都是问号：这矩阵算来算去到底有啥用？为啥非得折腾这些数字方块？考试前拼命刷题，考完试立马把书扔一边，心里还嘀咕着“这辈子估计用不上了”。可谁能想到，十年后的今天，我居然又翻开了线性代数的课本，而且这次是心甘情愿的！为啥？因为AI火了，而我发现，当年那些让我头大的矩阵运算，现在居然成了理解人工智能的“基本功”。从机器学习到图像识别，线性代数无处不在。</p>
+<h2 id="矩阵运算">矩阵运算<a hidden class="anchor" aria-hidden="true" href="#矩阵运算">#</a></h2>
+<p>你可以把矩阵想象成一个数据表格，每一行代表一个样本，每一列代表一个特征。比如，你想训练一个AI识别猫和狗，矩阵里的数据可能就是一堆猫狗图片的像素值。深度学习的过程，本质上就是对这些矩阵进行各种加减乘除、变形和组合，最终让AI学会从数据中提取规律。比如，神经网络里的每一层都在做矩阵乘法，通过调整矩阵里的参数（也就是权重），AI就能慢慢学会区分猫和狗。</p>
+<h2 id="使用python的numpy对矩阵进行运算">使用Python的Numpy对矩阵进行运算<a hidden class="anchor" aria-hidden="true" href="#使用python的numpy对矩阵进行运算">#</a></h2>
+<p>当然，我们使用Numpy这个强大的库就能实现矩阵的运算，不需要再手动进行计算。</p>
+<p>安装numpy</p>
+<pre tabindex="0"><code>pip3 install numpy
+</code></pre><p>导入模块</p>
+<pre tabindex="0"><code>import numpy as np
+</code></pre><p>创建两个矩阵</p>
+<pre tabindex="0"><code>A = np.array([[1, 2], [3, 4]])
+B = np.array([[5, 6], [7, 8]])
+</code></pre><p>矩阵相加</p>
+<pre tabindex="0"><code>C = A+B
+print(C)
+</code></pre><p>矩阵相减</p>
+<pre tabindex="0"><code>C = A-B
+print(C)
+</code></pre><p>转置矩阵</p>
+<pre tabindex="0"><code>A = np.array([[1, 2, 3], [4, 5, 6]])
+B = A.T
+</code></pre><p>矩阵相乘</p>
+<pre tabindex="0"><code>A = np.array([[1, 2], [3, 4], [3, 4]])
+B = np.array([[5, 6], [5, 6]])
+print(np.shape(A), np.shape(B))
+print(np.dot(A, B))
+</code></pre>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
     </main>
     
 <footer class="footer">

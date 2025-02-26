@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>王楚骁的site</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on 王楚骁的site</description>
+    <title>Shares on 王楚骁的site</title>
+    <link>http://localhost:1313/share/</link>
+    <description>Recent content in Shares on 王楚骁的site</description>
     <generator>Hugo -- 0.144.2</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 26 Feb 2025 20:48:12 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/share/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>时隔十年，AI时代重新学习线性代数</title>
       <link>http://localhost:1313/share/linear_algebra/</link>
@@ -82,22 +82,6 @@ Wasm在嵌入式设备，服务器运行&lt;/p&gt;
 Wasm在浏览器上已经大获成功。
 Wasm在Serverless云函数上小有成就。
 但是在嵌入式开发，单片机领域依然属于画大饼的阶段，因为Wasm轻量化的运行时可以运行在大多数嵌入式设备，或许未来它在工业领域能有巨大机遇。&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>About me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Hello，这里是王楚骁，base成都市，我是一名全栈工程师，精通Java/Golang/Python/Kubernetes/React技术栈，具有丰富的大型分布式项目研发经验，曾经在Golang知名开源项目openIM中作为核心成员设计并开发高性能IM，致力于企业级/高性能的解决方案，帮助企业私有化部署落地中大型k8s，k3s集群项目。&lt;/p&gt;
-&lt;h4 id=&#34;以下是我作为核心主导成员参与研发的项目&#34;&gt;以下是我作为核心主导成员参与研发的项目&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/openimsdk/open-im-server&#34;&gt;https://github.com/openimsdk/open-im-server&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/openimsdk/openim-sdk-core&#34;&gt;https://github.com/openimsdk/openim-sdk-core&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;联系我&#34;&gt;联系我&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Email: &lt;a href=&#34;mailto:wangchuxiao97@outlook.com&#34;&gt;wangchuxiao97@outlook.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
     </item>
   </channel>
