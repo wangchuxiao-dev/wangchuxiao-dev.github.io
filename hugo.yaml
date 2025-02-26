@@ -10,7 +10,7 @@ menu:
       params:
         icon: github
     - identifier: aboutMe
-      name: about me
+      name: 关于我
       url: /about/
       weight: 100
 params:
