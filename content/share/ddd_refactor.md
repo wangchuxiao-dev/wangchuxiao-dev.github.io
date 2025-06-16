@@ -266,6 +266,10 @@ classDiagram
     Purchaser "1" -- "n" InStockSheet
 ```
 
+```mermaid
+
+```
+
 
 其他出库单聚合
 ```mermaid
@@ -333,7 +337,8 @@ https://testcontainers.com/
 
 
 
-
+## 结论
+经过我的实践，给足够时间，以DDD方法论一定能把老架构改动。如果不给予足够的时间重构，以老架构的底子，确实难以实施，在有限时间使用新架构的底子实施可能会更好。
 
 
 
