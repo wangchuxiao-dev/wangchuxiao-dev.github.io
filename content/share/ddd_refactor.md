@@ -177,7 +177,8 @@ project/
 
 ## 老架构重构策略
 
-### 修缮者模式/绞杀植物模式
+### 增量演进
+通过增量演进，新旧系统并存的方式逐渐改掉遗留服务，通过路由级别的灰度发布验证新系统，针对特定接口配置路由规则。
 
 
 ### 如何拆分数据？数据归属问题？
@@ -188,18 +189,16 @@ project/
 有以下几种方式去在新拆分的领域服务里面去读取遗留系统的数据库：
 * 通过ACL防腐层实现repo直接读取
 ![ddd分层](/assets/acl_01.png "acl")
-* 新的服务直接通过订阅数据库CDC(目前mongodb低版本不支持),事件总线的方式去把遗留系统的数据持久化在自己的领域, 当然也需要ACL来实现
+
+* 通过订阅数据库CDC(目前mongodb低版本不支持),事件总线的方式去把遗留系统的数据持久化在自己的领域, 当然也需要ACL来实现
+
+* 通过事件总线的方式订阅遗留系统数据
 ![ddd分层](/assets/acl_03.png "acl")
 
 * 通过调用遗留系统API，ACL转换协议和schema
 ![ddd分层](/assets/acl_02.png "acl")
 
-
-
-
-
-
-## 新需求实战：采购损耗差异
+## 重构+新需求实战：采购损耗差异
 以采购损耗差异这个需求看看开发流程是如何的，具体代码该怎么写，这个需求是一个比较好的例子，它会涉及到对老系统领域模型的梳理。
 
 PRD文档: https://www.yuque.com/guanmai/vb2acm/vkgx5wwffws75rwv?singleDoc#
@@ -215,15 +214,18 @@ PRD文档: https://www.yuque.com/guanmai/vb2acm/vkgx5wwffws75rwv?singleDoc#
 
 ![ddd分层](/assets/ddd_event_storming.png "ddd_event_storming")
 
-该需求事件风暴：
+简化版事件风暴：
 
 ![ddd分层](/assets/ddd_event_storming_maocai.png "ddd_event_storming")
 
 
 ### 二. 技术设计，建立领域模型
-入库单聚合
+
+
+进销存领域库存管理上下文入库单聚合
 ```mermaid
 classDiagram
+    
     class InStockSheet {
       +String ID # 聚合根id
       +ValueObject Supplier # 供应商值对象
@@ -235,19 +237,20 @@ classDiagram
       +List[InStockSheetDetail] InitDetails # 初始采购单项实体
       +ValueObject Purchaser # 采购员值对象
       +ValueObject User # 用户值对象
-      +ValueObject PurchaseSheetID # 采购单值对象
-      +DateTime CommmitTime
+      +ValueObject PurchaseSheet # 采购单值对象
+      +DateTime CommitTime
       +DateTime CreateTime
       +DateTime UpdateTime 
       +DateTime Deletetime
       +String StationID
       +String GroupID
+      +Int Version
 
-      +create(CreateInStockSheetDo) InStockSheetCreatedEvent
-      +delete(DeleteInStockSheetDo) InStockSheetDeletedEvent
-      +update(UpdateInStockSheetDo) InStockSheetUpdatedEvent
-      +submit() InStockSheetSubmitedEvent
-      +getDetails()
+      +Create(CreateInStockSheetDo) InStockSheetCreatedEvent
+      +Delete(DeleteInStockSheetDo) InStockSheetDeletedEvent
+      +Update(UpdateInStockSheetDo) InStockSheetUpdatedEvent
+      +Submit() InStockSheetSubmitedEvent
+      +GetDetails()
       }
 
     class InStockSheetDetail {
@@ -258,11 +261,50 @@ classDiagram
       +String LossQuantity # 损耗数量
       +String UnitPrice # 单价
     }
-    InStockSheetDetail "1" -- "*" InStockSheet
+    InStockSheetDetail "1" -- "n" InStockSheet
+    Supplier "1" -- "n" InStockSheet
+    Purchaser "1" -- "n" InStockSheet
 ```
-其他出库单聚合
 
-.......
+
+其他出库单聚合
+```mermaid
+classDiagram
+     class OtherOutStockSheet {
+        + String ID
+        + ValueObject Type
+        + String BatchNumber
+        + List[OtherOutStockSheetDetail] Details # 商品项实体 
+     }
+     class OtherOutStockSheetDetail {
+
+     }
+
+     OtherOutStockSheetDetail "n" -- "1" OtherOutStockSheet
+```
+
+
+供应商上下文供应商聚合
+```mermaid
+classDiagram
+    class Supplier {
+        +String ID # 聚合根id
+        +String No
+        +String Address
+        +ValueObject Station # station值对象
+        +Object BizInfo #业务信息实体
+        +Bool IsAutoSyncPuchaseSheet
+        +List[SupplyCategory] SupplyCategorys # 可供分类实体
+        +List[String] # 可供分类Sku
+        +List[Contract] # 合同实体
+
+
+        +Create(CreateSupplierDo) SupplierCreatedEvent
+        +AddContract(AddContractDo) ContractAddedEvent
+        +AddSupplySku(String) SupplySkuAddedEvent
+    }
+    
+```
 
 
 ### 三. 需求拆分任务
@@ -281,21 +323,16 @@ classDiagram
 
 ### 五. 写完代码后，自行review代码读出坏味道，重构代码
 
-### 五. 根据时间充裕程度决定要不要补充集成测试(大概率百分之百不会有)
+### 五. 根据时间充裕程度决定要不要补充集成测试
 推荐集成测试工具：test-container，它提供可以在Docker容器中运行的任何东西的轻量级，一次性的实例。我们可以用它启动数据库，中间件去测试
 
 https://testcontainers.com/
 
 
 ### 六. 代码review
-找来了ai的code review工具，集成到ci里面
 
 
 
-
-## 老需求重构实战：原分拣打印服务重构
-
-### 一. 事件风暴
 
 
 
