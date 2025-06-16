@@ -214,7 +214,7 @@ PRD文档: https://www.yuque.com/guanmai/vb2acm/vkgx5wwffws75rwv?singleDoc#
 
 ![ddd分层](/assets/ddd_event_storming.png "ddd_event_storming")
 
-简化版事件风暴：
+进销存简化版事件风暴：
 
 ![ddd分层](/assets/ddd_event_storming_maocai.png "ddd_event_storming")
 
