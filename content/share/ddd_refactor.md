@@ -1,6 +1,6 @@
 +++
 date = '2025-05-26T20:48:12+08:00'
-draft = true
+draft = false
 title = 'DDD重构老架构后端代码'
 +++
 # DDD重构老架构后端代码
