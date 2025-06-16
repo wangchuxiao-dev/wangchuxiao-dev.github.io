@@ -214,6 +214,7 @@ PRD文档: https://www.yuque.com/guanmai/vb2acm/vkgx5wwffws75rwv?singleDoc#
 
 ![ddd分层](/assets/ddd_event_storming_maocai.png "ddd_event_storming")
 
+要重构哪个模块，就用事件风暴把哪个模块的事件，实体，命令理清楚
 
 ### 二. 技术设计，建立领域模型
 
